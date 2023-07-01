@@ -1,0 +1,68 @@
+{
+  "login": {
+    "id": 1,
+    "user": "ceshi",
+    "token": "1234",
+    "cardList": [
+      {
+        "cardNo": "6225666699876665",
+        "transferAuth": "1",
+        "balance": "2000",
+        "currency": "rmb",
+        "currencyName": "元",
+        "name": "张三"
+      },
+      {
+        "cardNo": "678821231231323",
+        "transferAuth": "1",
+        "balance": "8999000",
+        "currency": "usd",
+        "currencyName": "美元(钞)",
+        "name": "李四"
+      }
+    ]
+  },
+  "register": [
+    {
+      "id": 1
+    }
+  ],
+  "checkMobileTransfer": {
+    "mobile": ""
+  },
+  "getRecentTranfers": [
+    {
+      "id": 1,
+      "transferAmount": "10000",
+      "recName": "张三",
+      "recCardNo": "623170019002667889",
+      "recBankName": "工商银行"
+    },
+    {
+      "id": 2,
+      "transferAmount": "9980000",
+      "recName": "李四",
+      "recCardNo": "6231700191236672233",
+      "recBankName": "青岛银行"
+    }
+  ],
+  "getRecBankByCardBin": {
+    "recBankName": "青岛银行",
+    "recBankNo": "1001"
+  },
+  "getNets": [
+    {
+      "netsName": "青岛银行市北支行",
+      "id": 1
+    },
+    {
+      "netsName": "青岛银行市南支行",
+      "id": 2
+    }
+  ],
+  "getLimits": {
+    "dayTotalLimit": "8000000"
+  },
+  "sendMsg": {},
+  "submitTransfer": {}
+}

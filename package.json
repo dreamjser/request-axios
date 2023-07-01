@@ -1,0 +1,35 @@
+{
+  "name": "@dreamjser/request-axios",
+  "version": "1.0.0",
+  "description": "a request create by axios",
+  "type": "module",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "type.d.ts",
+  "scripts": {
+    "dev": "npm run serve & rollup -c rollup.dev.config.js --watch",
+    "build": "rollup -c",
+    "serve": "node ./json_server/server.js"
+  },
+  "keywords": [
+    "request",
+    "axios"
+  ],
+  "author": "dreamjser@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "cors": "^2.8.5",
+    "json-server": "^0.17.3",
+    "rollup": "^3.26.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-serve": "^2.0.2",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "typescript": "^5.1.6"
+  }
+}
