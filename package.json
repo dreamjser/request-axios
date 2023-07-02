@@ -15,6 +15,11 @@
     "request",
     "axios"
   ],
+  "files": [
+    "es",
+    "lib",
+    "index.d.ts"
+  ],
   "author": "dreamjser@gmail.com",
   "license": "ISC",
   "dependencies": {

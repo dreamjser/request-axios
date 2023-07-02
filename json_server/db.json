@@ -1,7 +1,5 @@
 {
-  "login": {
-    "name": "张三"
-  },
+  "login": {},
   "register": [
     {
       "id": 1
