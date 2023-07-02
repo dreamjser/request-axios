@@ -7,10 +7,10 @@ import livereload from 'rollup-plugin-livereload'
 import json from '@rollup/plugin-json'
 
 export default {
-  input: 'src/index.ts',
+  input: 'example/main.js',
   output: [{
-    file: 'src/index.js',
-    format: 'es',
+    file: 'example/index.js',
+    format: 'umd',
   }],
   watch: {
     include: ['src/**', 'example/**'],
@@ -19,7 +19,12 @@ export default {
     ts({
       clean: true,
     }),
-    resolve(),
+    resolve({
+      jsnext: true,
+      main: true,
+      browser: true,
+      preferBuiltins: true
+    }),
     commonjs(),
     json(),
     serve({

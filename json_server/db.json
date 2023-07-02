@@ -1,26 +1,6 @@
 {
   "login": {
-    "id": 1,
-    "user": "ceshi",
-    "token": "1234",
-    "cardList": [
-      {
-        "cardNo": "6225666699876665",
-        "transferAuth": "1",
-        "balance": "2000",
-        "currency": "rmb",
-        "currencyName": "元",
-        "name": "张三"
-      },
-      {
-        "cardNo": "678821231231323",
-        "transferAuth": "1",
-        "balance": "8999000",
-        "currency": "usd",
-        "currencyName": "美元(钞)",
-        "name": "李四"
-      }
-    ]
+    "name": "张三"
   },
   "register": [
     {

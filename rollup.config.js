@@ -7,7 +7,7 @@ import json from '@rollup/plugin-json'
 export default {
   input: 'src/index.ts',
   output: [{
-    name: 'CountdownCircle',
+    name: 'requestAxios',
     file: 'lib/index.js',
     format: 'umd',
     plugins: [resolve(), commonjs(), json()]

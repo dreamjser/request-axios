@@ -1,8 +1,6 @@
-type CountdownCircle = import('vue').DefineComponent<{
-  timeOut?: number
-  circleColor?: string
-}>
+import type { AllType, OptionsGlobalType } from './src/index.ts'
 
 declare module '@dreamjser/request-axios' {
-  export const CountdownCircle: CountdownCircle
+  export const getAxios: AllType
+  export const getGlobalAxios: OptionsGlobalType
 }

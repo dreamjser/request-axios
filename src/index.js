@@ -13,6 +13,8 @@ import require$$4$1 from 'net';
 import zlib from 'zlib';
 import EventEmitter from 'events';
 
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r); })(self.document);
+
 function bind(fn, thisArg) {
   return function wrap() {
     return fn.apply(thisArg, arguments);
@@ -17995,9 +17997,14 @@ const getAxios = (opts, instance) => {
         instanceOpts.data = data;
     }
     if (requestHook) {
-        instanceOpts = requestHook(instanceOpts);
+        requestHook(instanceOpts);
     }
-    return instance;
+    return instance(instanceOpts).then((data) => {
+        if (responseHook && !responseHook(data)) {
+            return;
+        }
+        return data;
+    });
 };
 const getGlobalAxios = (opts) => {
     return axios$1.create(opts);

@@ -22,11 +22,11 @@ type OptionsCustomerType = {
   isUpload?: boolean
   data?: object
   publicError?: boolean
-  requestHook?: (opts: AxiosType) => AxiosType
-  responseHook?: (opts: AxiosType) => AxiosType
+  requestHook?: (opts: any) => any
+  responseHook?: (opts: any) => boolean
 }
 
-type OptionsGlobalType = {
+export type OptionsGlobalType = {
   baseURL?: string
   timeout?: number
   onUploadProgress?: (progressEvent: AxiosProgressEvent) => void
@@ -36,7 +36,7 @@ type OptionsGlobalType = {
 
 type OtherType = OptionsNotRequiredType & OptionsCustomerType
 
-type AllType = AxiosType & OptionsCustomerType
+export type AllType = AxiosType & OptionsCustomerType
 
 const createFormData = (params: any) => {
   const formData = new FormData()
@@ -45,6 +45,7 @@ const createFormData = (params: any) => {
   })
   return formData
 }
+
 
 export const getAxios = (opts: AllType, instance: AxiosInstance) => {
   const defaultOpts: OtherType = {
@@ -94,10 +95,16 @@ export const getAxios = (opts: AllType, instance: AxiosInstance) => {
   }
 
   if(requestHook) {
-    instanceOpts = requestHook(instanceOpts)
+    requestHook(instanceOpts)
   }
 
-  return instance
+  return instance(instanceOpts).then((res: any) => {
+    if(responseHook && !responseHook(res)) {
+      return
+    }
+
+    return res.data
+  })
 }
 
 export const getGlobalAxios = (opts: OptionsGlobalType) => {
