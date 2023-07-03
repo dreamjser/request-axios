@@ -1,4 +1,4 @@
-import {getGlobalAxios, getAxios} from '../src/index.js'
+import {getGlobalAxios, getAxios} from '../es/index.js'
 
 const axiosInstance = getGlobalAxios({
   timeout: 30000
