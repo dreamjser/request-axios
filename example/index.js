@@ -3230,7 +3230,7 @@
           data: {},
           timeout: 30000,
       };
-      let { url, method, headers, baseURL, onUploadProgress, onDownloadProgress, requestHook, responseHook, data, isUpload } = {
+      let { url, method, headers, baseURL, onUploadProgress, onDownloadProgress, requestHook, responseHook, data, isUpload, slient, publicError, } = {
           ...defaultOpts,
           ...opts,
       };
@@ -3241,6 +3241,8 @@
           baseURL,
           onUploadProgress,
           onDownloadProgress,
+          slient,
+          publicError,
       };
       // 上传
       if (isUpload) {
@@ -3252,14 +3254,16 @@
       else {
           instanceOpts.data = data;
       }
-      if (requestHook) {
-          requestHook(instanceOpts);
-      }
-      return instance(instanceOpts).then((res) => {
-          if (responseHook && !responseHook(res)) {
-              return;
-          }
-          return res.data;
+      requestHook && requestHook(instanceOpts);
+      return new Promise((reslove, reject) => {
+          instance(instanceOpts).then((res) => {
+              if (responseHook) {
+                  responseHook(reslove, reject, res);
+              }
+              else {
+                  reslove(res.data);
+              }
+          }).catch(reject);
       });
   };
   const getGlobalAxios = (opts) => {

@@ -23,7 +23,7 @@ type OptionsCustomerType = {
   data?: object
   publicError?: boolean
   requestHook?: (opts: any) => any
-  responseHook?: (opts: any) => boolean
+  responseHook?: (reslove: any, reject: any, data: any) => void
 }
 
 export type OptionsGlobalType = {
@@ -98,17 +98,18 @@ export const getAxios = (opts: AllType, instance: AxiosInstance) => {
     instanceOpts.data = data
   }
 
-  if(requestHook) {
-    requestHook(instanceOpts)
-  }
+  requestHook && requestHook(instanceOpts)
 
-  return instance(instanceOpts).then((res: any) => {
-    if(responseHook && !responseHook(res)) {
-      return
-    }
-
-    return res.data
+  return new Promise((reslove: any, reject: any) => {
+    instance(instanceOpts).then((res: any) => {
+      if(responseHook) {
+        responseHook(reslove, reject, res)
+      }else{
+        reslove(res.data)
+      }
+    }).catch(reject)
   })
+
 }
 
 export const getGlobalAxios = (opts: OptionsGlobalType) => {
