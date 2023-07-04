@@ -68,19 +68,23 @@ export const getAxios = (opts: AllType, instance: AxiosInstance) => {
     requestHook,
     responseHook,
     data,
-    isUpload
+    isUpload,
+    slient,
+    publicError,
   }: AllType = {
     ...defaultOpts,
     ...opts,
   }
 
-  let instanceOpts: AxiosType = {
+  let instanceOpts: AllType = {
     url,
     method,
     headers,
     baseURL,
     onUploadProgress,
     onDownloadProgress,
+    slient,
+    publicError,
   }
 
   // 上传
