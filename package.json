@@ -21,7 +21,6 @@
     "index.d.ts"
   ],
   "author": "dreamjser@gmail.com",
-  "private":"false",
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.22.5",
