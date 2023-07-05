@@ -18,8 +18,12 @@
   "files": [
     "es",
     "lib",
-    "index.d.ts"
+    "type.d.ts"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamjser/request-axios.git"
+  },
   "author": "dreamjser@gmail.com",
   "license": "ISC",
   "dependencies": {
