@@ -4,7 +4,7 @@ export {
   AllType,
   OptionsGlobalType,
 }
-export {getAxios,getGlobalAxios} from './src/index.ts'
+export {getAxios,getGlobalAxios} from './lib/index.js'
 
 
 declare module '@dreamjser/request-axios' {
