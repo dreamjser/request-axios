@@ -4,20 +4,20 @@
 
 ```
   // npm安装
-  npm i @dreamjser/request-axios -g
+  npm i @dreamjser/request-axios
 
 ```
 
 
 ```
   // yarn安装
-  yarn add @dreamjser/request-axios -g
+  yarn add @dreamjser/request-axios
 
 ```
 
 ```
   // pnpm安装
-  pnpm add @dreamjser/request-axios -g
+  pnpm add @dreamjser/request-axios
 ```
 
 ## 使用
