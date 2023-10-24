@@ -5,6 +5,7 @@
   "type": "module",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "types": "type.d.ts",
   "typings": "type.d.ts",
   "scripts": {
     "dev": "npm run serve & rollup -c rollup.dev.config.js --watch",
