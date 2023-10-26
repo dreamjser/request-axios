@@ -7,11 +7,6 @@ import json from '@rollup/plugin-json'
 export default {
   input: 'src/index.ts',
   output: [{
-    name: 'requestAxios',
-    file: 'lib/index.js',
-    format: 'umd',
-
-  }, {
     file: 'es/index.js',
     format: 'es',
   }],

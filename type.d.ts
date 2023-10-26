@@ -1,5 +1,5 @@
 import type { AllType, OptionsGlobalType } from './src/index.ts'
-export {getAxios,getGlobalAxios} from './src/index.ts'
+export {getAxios,getGlobalAxios} from './es'
 
 export {
   AllType,
