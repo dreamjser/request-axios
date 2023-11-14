@@ -15,9 +15,9 @@
     "strict": true,
     "alwaysStrict": true,
     "moduleResolution": "node",
-    "sourceMap": true,
+    "noEmit": true,
     "typeRoots": ["./node_modules/@types", "./typings"]
   },
   "exclude": ["node_modules"],
-  "include": ["src/*.ts", "example/*.ts", "typings/*.d.ts"],
+  "include": ["src/*.ts", "typings/*.d.ts"],
 }

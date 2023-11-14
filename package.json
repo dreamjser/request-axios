@@ -5,8 +5,8 @@
   "type": "module",
   "main": "es/index.js",
   "module": "es/index.js",
-  "types": "type.d.ts",
-  "typings": "type.d.ts",
+  "types": "es/index.d.ts",
+  "typings": "es/index.d.ts",
   "scripts": {
     "dev": "npm run serve & rollup -c rollup.dev.config.js --watch",
     "build": "rollup -c",
