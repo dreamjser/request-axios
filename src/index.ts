@@ -107,9 +107,13 @@ export const getAxios = (opts: AllType, instance: AxiosInstance) => {
       }else{
         reslove(res.data)
       }
-    }).catch(reject)
+    }).catch((error: any) => {
+      reject({
+        error,
+        config: instanceOpts,
+      })
+    })
   })
-
 }
 
 export const getGlobalAxios = (opts: OptionsGlobalType) => {
