@@ -1,6 +1,6 @@
 {
   "name": "@dreamjser/request-axios",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "a request lib create by axios",
   "type": "module",
   "main": "es/index.js",
